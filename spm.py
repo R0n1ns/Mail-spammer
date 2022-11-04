@@ -10,12 +10,11 @@ from imp_acc import acc
 #         return self.logn
 #     def ret_pus(self):
 #         return self.pus
-# log="korobovvad@mail.ru"
-# puss="YkRcAHBJ9HewGYThxdCN"# YkRcAHBJ9HewGYThxdCN
-to="korobovvad@mail.ru"
+
+t="korobovvad@mail.ru"
 msg="test"
-###
-# obj1=frm_mail(logn=log,pus=puss)
+volum=2
+
 
 #выполнение
 def send_msg(logn,pus,to,msg):
@@ -24,5 +23,14 @@ def send_msg(logn,pus,to,msg):
     srv.login(logn,pus)
     srv.sendmail(logn,to,msg)
     srv.quit()
+
+def spam(acs,ms,to,vlm):
+    srv = smtplib.SMTP_SSL('smtp.mail.ru', 465)
+    for i in range(vlm):
+        srv.login(acs[0][0], acs[0][1])
+        srv.sendmail(acs[0][0], to, ms)
+    srv.quit()
+
 #######
-send_msg(acc[0][0],acc[0][1],to,msg)
+#send_msg(acc[0][0],acc[0][1],to,msg)
+spam(acc,msg,t,volum)
