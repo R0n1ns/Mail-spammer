@@ -17,13 +17,14 @@ volum=2
 
 
 #выполнение
+#отправка 1 сообщения
 def send_msg(logn,pus,to,msg):
     srv = smtplib.SMTP_SSL('smtp.mail.ru', 465)
     #srv.set_debuglevel(1)
     srv.login(logn,pus)
     srv.sendmail(logn,to,msg)
     srv.quit()
-
+#множественный спам ДОДЕЛАТЬ
 def spam(acs,ms,to,vlm):
     srv = smtplib.SMTP_SSL('smtp.mail.ru', 465)
     for i in range(vlm):
@@ -32,5 +33,6 @@ def spam(acs,ms,to,vlm):
     srv.quit()
 
 #######
+#тесты
 #send_msg(acc[0][0],acc[0][1],to,msg)
 spam(acc,msg,t,volum)
