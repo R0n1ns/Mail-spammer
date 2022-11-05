@@ -1,15 +1,6 @@
 #импорты
 import smtplib
 from imp_acc import acc
-##классы
-# class frm_mail():
-#     def __init__ (self,logn,pus):
-#         self.logn=logn
-#         self.pus=pus
-#     def ret_log(self):
-#         return self.logn
-#     def ret_pus(self):
-#         return self.pus
 
 t="korobovvad@mail.ru"
 msg="test"
@@ -24,14 +15,14 @@ class sender:
     #подключение к серверу
     srv = smtplib.SMTP_SSL('smtp.mail.ru', 465)
     #инициализация обьекта отправщика
-    def __init__ (self,ac,to,msg):
+    def __init__ (self,ac:list,to:list,msg:str):
         """Необходимо указать :
         ac : один или несколько аккаунтов,каждый в списке и все они в еще одном списке; получается двумерный спиисок \n
-        to : почта куда: пока одна \n
+        to : почта куда,одномерный массив в любом случае,если если почта одна \n
         msg : текст сообщения
         """
         self.srv=smtplib.SMTP_SSL('smtp.mail.ru', 465)
-        self.to = to
+        self.to = to[0] if len(to)==1 else to
         self.msg = msg
         self.acc = acc=ac[0] if len(ac)==1 else ac
     #отправка одного сообщения с одного аккаунта
@@ -46,26 +37,31 @@ class sender:
         self.srv.login(log, puss)
         self.srv.sendmail(log, self.to, self.msg)
         self.srv.quit()
-
+    def send_few_msg_frm_1_acc(self,vlm:int):
+        """Метод для отправки нескольких сообщений с одного аккаунта на 1 аккаунт\n
+        Принимает:\n
+        двумерный массив и берет первый массив в списке массивов \n
+        куда отправлять сообщение \n
+        какое сообщение"""
+        log=self.acc[0]
+        puss=self.acc[1]
+        for i in range(vlm):
+            self.srv.login(log,puss)
+            self.srv.sendmail(log,self.to,self.msg)
+        self.srv.quit()
+    def send_1_msg_frm_1_acc_to_mtpl_acs(self):
+        """Метод для отправки 1 сообщения с одного аккаунта на несколько аккаунтов\n
+        Принимает:\n
+        двумерный массив и берет первый массив в списке массивов из аккаунтов отправки \n
+        одномерный массив массивов куда отправить, и отправляет на каждый аккаунт одно сообщение \n\n
+        какое сообщение"""
+        log=self.acc[0]
+        puss=self.acc[1]
+        to=self.to
+        for i in range(len(to)):
+            self.srv.login(log,puss)
+            self.srv.sendmail(log,to[i],self.msg)
+        self.srv.quit()
+t= ['korobovvad@mail.ru','korobovvad27@yandex.ru']
 snd = sender(acc,t,msg)
-snd.send_1_msg_frm_1_acc()
-#выполнение
-#отправка 1 сообщения с одной почты
-def send_msg(logn,pus,to,msg):
-    srv = smtplib.SMTP_SSL('smtp.mail.ru', 465)
-    #srv.set_debuglevel(1)
-    srv.login(logn,pus)
-    srv.sendmail(logn,to,msg)
-    srv.quit()
-#множественный спам с одной почты
-def spam(ac,ms,to,vlm):
-    srv = smtplib.SMTP_SSL('smtp.mail.ru', 465)
-    for i in range(vlm):
-        srv.login(ac, ac)
-        srv.sendmail(ac, to, ms)
-    srv.quit()
-
-#######
-#тесты
-#send_msg(acc[0][0],acc[0][1],to,msg)
-# spam(acc,msg,t,volum)
+snd.send_1_msg_frm_1_acc_to_mtpl_acs()
