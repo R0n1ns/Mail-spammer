@@ -2,7 +2,7 @@ from PyQt5 import uic ,QtWidgets #выдает ошибку,но не трога
 import sys
 
 app = QtWidgets.QApplication([])
-win = uic.loadUi("говно.ui")  # расположение вашего файла .ui
+win = uic.loadUi("mydesign.ui")  # расположение вашего файла .ui
 
 win.show()
 sys.exit(app.exec())
