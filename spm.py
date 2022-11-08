@@ -2,10 +2,6 @@
 import smtplib
 from imp_acc import acc
 
-t="korobovvad@mail.ru"
-msg="test"
-volum=2
-
 class sender:
     """Отправщик сообщения\n
             Методы:\n
@@ -62,6 +58,11 @@ class sender:
             self.srv.login(log,puss)
             self.srv.sendmail(log,to[i],self.msg)
         self.srv.quit()
+
+
+t="korobovvad@mail.ru"
+msg="test"
+volum=2
 t= ['korobovvad@mail.ru','korobovvad27@yandex.ru']
 snd = sender(acc,t,msg)
 snd.send_1_msg_frm_1_acc_to_mtpl_acs()

@@ -13,15 +13,20 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Main(object):
     def setupUi(self, Main):
+        #настройки главного окна и бэкэнда
         Main.setObjectName("Main")
         Main.resize(800, 600)
         Main.setStyleSheet("background-color:rgb(255, 255, 255);")
+        ##################################################################
+        #размеры главного окна
         self.main_wg = QtWidgets.QWidget(Main)
         self.main_wg.setMinimumSize(QtCore.QSize(400, 400))
         self.main_wg.setMaximumSize(QtCore.QSize(1600, 1600))
         self.main_wg.setBaseSize(QtCore.QSize(800, 800))
         self.main_wg.setStyleSheet("background-color:rgb(255, 255, 255);")
         self.main_wg.setObjectName("main_wg")
+        ##################################################################
+        #кнопка отправки писем или письма
         self.mail_send_but = QtWidgets.QPushButton(self.main_wg)
         self.mail_send_but.setGeometry(QtCore.QRect(10, 440, 420, 110))
         self.mail_send_but.setMinimumSize(QtCore.QSize(210, 55))
@@ -33,6 +38,8 @@ class Ui_Main(object):
         self.mail_send_but.setFont(font)
         self.mail_send_but.setStyleSheet("border: 3px solid black;background-color:rgb(255, 255, 255);")
         self.mail_send_but.setObjectName("mail_send_but")
+        ##################################################################
+        #количество сообщений
         self.volum_edit = QtWidgets.QLineEdit(self.main_wg)
         self.volum_edit.setGeometry(QtCore.QRect(10, 380, 260, 40))
         self.volum_edit.setMinimumSize(QtCore.QSize(130, 20))
@@ -44,6 +51,8 @@ class Ui_Main(object):
         self.volum_edit.setFont(font)
         self.volum_edit.setStyleSheet("background-color: rgb(0, 255, 255);border: 2px solid black;")
         self.volum_edit.setObjectName("volum_edit")
+        ##################################################################
+        #надпись "Количество"
         self.vlm_lbl = QtWidgets.QLabel(self.main_wg)
         self.vlm_lbl.setGeometry(QtCore.QRect(10, 310, 260, 50))
         self.vlm_lbl.setMinimumSize(QtCore.QSize(130, 25))
@@ -55,6 +64,8 @@ class Ui_Main(object):
         self.vlm_lbl.setFont(font)
         self.vlm_lbl.setStyleSheet("background-color: rgb(0, 255, 255);border: 2px solid black;")
         self.vlm_lbl.setObjectName("vlm_lbl")
+        ##################################################################
+        #надпись "Отправитель"
         self.progr_name = QtWidgets.QLabel(self.main_wg)
         self.progr_name.setGeometry(QtCore.QRect(200, 0, 350, 50))
         self.progr_name.setMinimumSize(QtCore.QSize(175, 25))
@@ -66,6 +77,8 @@ class Ui_Main(object):
         self.progr_name.setFont(font)
         self.progr_name.setStyleSheet("border: 2px solid black;")
         self.progr_name.setObjectName("progr_name")
+        ##################################################################
+        #поле ввода пороля
         self.pus_us_edit = QtWidgets.QLineEdit(self.main_wg)
         self.pus_us_edit.setGeometry(QtCore.QRect(600, 100, 180, 30))
         self.pus_us_edit.setMinimumSize(QtCore.QSize(90, 15))
@@ -76,12 +89,16 @@ class Ui_Main(object):
         self.pus_us_edit.setStyleSheet("background-color:rgb(85, 85, 255);border: 2px solid black;")
         self.pus_us_edit.setText("")
         self.pus_us_edit.setObjectName("pus_us_edit")
+        ##################################################################
+        #ввод куда отправлять письма
         self.to_edit = QtWidgets.QLineEdit(self.main_wg)
         self.to_edit.setGeometry(QtCore.QRect(450, 320, 240, 30))
         self.to_edit.setMinimumSize(QtCore.QSize(120, 15))
         self.to_edit.setMaximumSize(QtCore.QSize(480, 60))
         self.to_edit.setStyleSheet("background-color: rgb(255, 170, 255);border: 2px solid black;")
         self.to_edit.setObjectName("to_edit")
+        ##################################################################
+        #надпись "Куда отправлять"
         self.to_lbl = QtWidgets.QLabel(self.main_wg)
         self.to_lbl.setGeometry(QtCore.QRect(320, 320, 120, 30))
         self.to_lbl.setMinimumSize(QtCore.QSize(60, 15))
@@ -93,6 +110,8 @@ class Ui_Main(object):
         self.to_lbl.setFont(font)
         self.to_lbl.setStyleSheet("background-color: rgb(255, 170, 255);border: 2px solid black;")
         self.to_lbl.setObjectName("to_lbl")
+        ##################################################################
+        # надпись "Ваши данные"
         self.user_dt_lbl = QtWidgets.QLabel(self.main_wg)
         self.user_dt_lbl.setGeometry(QtCore.QRect(560, 20, 160, 40))
         self.user_dt_lbl.setMinimumSize(QtCore.QSize(80, 20))
@@ -104,6 +123,8 @@ class Ui_Main(object):
         self.user_dt_lbl.setFont(font)
         self.user_dt_lbl.setStyleSheet("background-color:rgb(85, 85, 255);border: 2px solid black;")
         self.user_dt_lbl.setObjectName("user_dt_lbl")
+        ##################################################################
+        #поле ввода логина почты
         self.log_us_edit = QtWidgets.QLineEdit(self.main_wg)
         self.log_us_edit.setGeometry(QtCore.QRect(410, 100, 180, 30))
         self.log_us_edit.setMinimumSize(QtCore.QSize(90, 15))
@@ -114,12 +135,16 @@ class Ui_Main(object):
         self.log_us_edit.setStyleSheet("background-color:rgb(85, 85, 255);border: 2px solid black;")
         self.log_us_edit.setText("")
         self.log_us_edit.setObjectName("log_us_edit")
+        ##################################################################
+        #Поле ввода сообщения
         self.msg_txt_edit = QtWidgets.QTextEdit(self.main_wg)
         self.msg_txt_edit.setGeometry(QtCore.QRect(10, 130, 360, 170))
         self.msg_txt_edit.setMinimumSize(QtCore.QSize(180, 85))
         self.msg_txt_edit.setMaximumSize(QtCore.QSize(720, 340))
         self.msg_txt_edit.setStyleSheet("background-color:rgb(85, 255, 127);border: 2px solid black;")
         self.msg_txt_edit.setObjectName("msg_txt_edit")
+        ##################################################################
+        # надпись "Пороль"
         self.pus_lbl = QtWidgets.QLabel(self.main_wg)
         self.pus_lbl.setGeometry(QtCore.QRect(650, 70, 80, 25))
         self.pus_lbl.setMinimumSize(QtCore.QSize(40, 12))
@@ -129,6 +154,8 @@ class Ui_Main(object):
         self.pus_lbl.setFont(font)
         self.pus_lbl.setStyleSheet("background-color:rgb(85, 85, 255);border: 2px solid black;")
         self.pus_lbl.setObjectName("pus_lbl")
+        ##################################################################
+        # надпись "Логин"
         self.log_lbl = QtWidgets.QLabel(self.main_wg)
         self.log_lbl.setGeometry(QtCore.QRect(460, 70, 70, 25))
         self.log_lbl.setMinimumSize(QtCore.QSize(35, 12))
@@ -138,6 +165,8 @@ class Ui_Main(object):
         self.log_lbl.setFont(font)
         self.log_lbl.setStyleSheet("background-color:rgb(85, 85, 255);border: 2px solid black;")
         self.log_lbl.setObjectName("log_lbl")
+        ##################################################################
+        # надпись "Текст сообщения"
         self.msg_txt_lbl = QtWidgets.QLabel(self.main_wg)
         self.msg_txt_lbl.setGeometry(QtCore.QRect(10, 70, 280, 50))
         self.msg_txt_lbl.setMinimumSize(QtCore.QSize(140, 25))
@@ -147,6 +176,8 @@ class Ui_Main(object):
         self.msg_txt_lbl.setFont(font)
         self.msg_txt_lbl.setStyleSheet("background-color:rgb(85, 255, 127);border: 2px solid black;")
         self.msg_txt_lbl.setObjectName("msg_txt_lbl")
+        ##################################################################
+        # почты с которых отправлять письма
         self.area_us_dt = QtWidgets.QScrollArea(self.main_wg)
         self.area_us_dt.setGeometry(QtCore.QRect(410, 140, 370, 150))
         self.area_us_dt.setMinimumSize(QtCore.QSize(185, 75))
@@ -158,6 +189,8 @@ class Ui_Main(object):
         self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 366, 146))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.area_us_dt.setWidget(self.scrollAreaWidgetContents)
+        ##################################################################
+        #почты куда отправлять письма
         self.area_to = QtWidgets.QScrollArea(self.main_wg)
         self.area_to.setGeometry(QtCore.QRect(440, 370, 340, 170))
         self.area_to.setMinimumSize(QtCore.QSize(170, 85))
@@ -169,6 +202,8 @@ class Ui_Main(object):
         self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 336, 166))
         self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
         self.area_to.setWidget(self.scrollAreaWidgetContents_2)
+        ##################################################################
+        #кнопка добавить почты куда отправлять письмо
         self.add_to_but = QtWidgets.QPushButton(self.main_wg)
         self.add_to_but.setGeometry(QtCore.QRect(700, 320, 80, 30))
         self.add_to_but.setMinimumSize(QtCore.QSize(40, 15))
@@ -178,6 +213,8 @@ class Ui_Main(object):
         self.add_to_but.setFont(font)
         self.add_to_but.setStyleSheet("background-color: rgb(255, 170, 255);border: 2px solid black;")
         self.add_to_but.setObjectName("add_to_but")
+        ##################################################################
+        #кнопка добавления юзер данных
         self.add_us_dt_but = QtWidgets.QPushButton(self.main_wg)
         self.add_us_dt_but.setGeometry(QtCore.QRect(550, 70, 80, 30))
         self.add_us_dt_but.setMinimumSize(QtCore.QSize(40, 15))
@@ -187,6 +224,7 @@ class Ui_Main(object):
         self.add_us_dt_but.setFont(font)
         self.add_us_dt_but.setStyleSheet("border: 2px solid black;background-color:rgb(85, 85, 255);border: 2px solid black;")
         self.add_us_dt_but.setObjectName("add_us_dt_but")
+        ##################################################################
         Main.setCentralWidget(self.main_wg)
         self.menubar = QtWidgets.QMenuBar(Main)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
