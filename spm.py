@@ -50,6 +50,7 @@ class sender:
         Принимает:\n
         двумерный массив и берет первый массив в списке массивов из аккаунтов отправки \n
         одномерный массив массивов куда отправить, и отправляет на каждый аккаунт одно сообщение \n\n
+
         какое сообщение"""
         log=self.acc[0]
         puss=self.acc[1]
@@ -59,10 +60,10 @@ class sender:
             self.srv.sendmail(log,to[i],self.msg)
         self.srv.quit()
 
-
-t="korobovvad@mail.ru"
-msg="test"
-volum=2
-t= ['korobovvad@mail.ru','korobovvad27@yandex.ru']
-snd = sender(acc,t,msg)
-snd.send_1_msg_frm_1_acc_to_mtpl_acs()
+#
+# t="korobovvad@mail.ru"
+# msg="test"
+# volum=2
+# t= ['korobovvad@mail.ru','korobovvad27@yandex.ru']
+# snd = sender(acc,t,msg)
+# snd.send_1_msg_frm_1_acc_to_mtpl_acs()

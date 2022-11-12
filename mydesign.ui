@@ -41,8 +41,8 @@
    <widget class="QPushButton" name="mail_send_but">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>440</y>
+      <x>0</x>
+      <y>320</y>
       <width>420</width>
       <height>110</height>
      </rect>
@@ -67,7 +67,8 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: 3px solid black;background-color:rgb(255, 255, 255);</string>
+     <string notr="true">QPushButton{border: 3px solid black;background-color:rgb(255, 255, 255);}
+QPushButton:pressed{background-color:rgb(255, 85, 0);}</string>
     </property>
     <property name="text">
      <string>Начать отправление</string>
@@ -77,8 +78,8 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>380</y>
-      <width>260</width>
+      <y>240</y>
+      <width>361</width>
       <height>40</height>
      </rect>
     </property>
@@ -103,41 +104,6 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(0, 255, 255);border: 2px solid black;</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="vlm_lbl">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>310</y>
-      <width>260</width>
-      <height>50</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>130</width>
-      <height>25</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>520</width>
-      <height>100</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>16</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 255, 255);border: 2px solid black;</string>
-    </property>
-    <property name="text">
-     <string>Количество</string>
     </property>
    </widget>
    <widget class="QLabel" name="progr_name">
@@ -211,9 +177,9 @@
    <widget class="QLineEdit" name="to_edit">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>320</y>
-      <width>240</width>
+      <x>440</x>
+      <y>330</y>
+      <width>241</width>
       <height>30</height>
      </rect>
     </property>
@@ -231,41 +197,6 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 170, 255);border: 2px solid black;</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="to_lbl">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>320</y>
-      <width>120</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>60</width>
-      <height>15</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>240</width>
-      <height>60</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 170, 255);border: 2px solid black;</string>
-    </property>
-    <property name="text">
-     <string>Куда отправлять</string>
     </property>
    </widget>
    <widget class="QLabel" name="user_dt_lbl">
@@ -340,7 +271,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>130</y>
+      <y>60</y>
       <width>360</width>
       <height>170</height>
      </rect>
@@ -359,105 +290,6 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color:rgb(85, 255, 127);border: 2px solid black;</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="pus_lbl">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>70</y>
-      <width>80</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>40</width>
-      <height>12</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>160</width>
-      <height>50</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:rgb(85, 85, 255);border: 2px solid black;</string>
-    </property>
-    <property name="text">
-     <string>Пороль</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="log_lbl">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>70</y>
-      <width>70</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>35</width>
-      <height>12</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>140</width>
-      <height>50</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:rgb(85, 85, 255);border: 2px solid black;</string>
-    </property>
-    <property name="text">
-     <string>Логин</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="msg_txt_lbl">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>70</y>
-      <width>280</width>
-      <height>50</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>140</width>
-      <height>25</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>560</width>
-      <height>100</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:rgb(85, 255, 127);border: 2px solid black;</string>
-    </property>
-    <property name="text">
-     <string>Сообщение</string>
     </property>
    </widget>
    <widget class="QScrollArea" name="area_us_dt">
@@ -496,6 +328,32 @@
        <height>146</height>
       </rect>
      </property>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>47</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioButton">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>10</y>
+        <width>291</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>RadioButton</string>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="QScrollArea" name="area_to">
@@ -539,9 +397,9 @@
    <widget class="QPushButton" name="add_to_but">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>320</y>
-      <width>80</width>
+      <x>680</x>
+      <y>330</y>
+      <width>91</width>
       <height>30</height>
      </rect>
     </property>
@@ -563,7 +421,8 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 170, 255);border: 2px solid black;</string>
+     <string notr="true">QPushButton{border: 3px solid black;background-color: rgb(255, 170, 255);}
+QPushButton:pressed{background-color:rgb(170, 0, 127);}</string>
     </property>
     <property name="text">
      <string>Добавить</string>
@@ -596,10 +455,24 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: 2px solid black;background-color:rgb(85, 85, 255);border: 2px solid black;</string>
+     <string notr="true">QPushButton{border: 3px solid black;background-color:rgb(85, 85, 255);}
+QPushButton:pressed{background-color:rgb(255, 0, 127);}</string>
     </property>
     <property name="text">
      <string>Добавить</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>460</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>состояние</string>
     </property>
    </widget>
   </widget>
