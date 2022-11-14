@@ -17,6 +17,15 @@
    <string notr="true">background-color:rgb(255, 255, 255);</string>
   </property>
   <widget class="QWidget" name="main_wg">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="minimumSize">
     <size>
      <width>400</width>
@@ -42,9 +51,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>320</y>
-      <width>420</width>
-      <height>110</height>
+      <y>495</y>
+      <width>401</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -105,11 +114,14 @@ QPushButton:pressed{background-color:rgb(255, 85, 0);}</string>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(0, 255, 255);border: 2px solid black;</string>
     </property>
+    <property name="placeholderText">
+     <string>Количество сообщений</string>
+    </property>
    </widget>
    <widget class="QLabel" name="progr_name">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>30</x>
       <y>0</y>
       <width>350</width>
       <height>50</height>
@@ -173,6 +185,9 @@ QPushButton:pressed{background-color:rgb(255, 85, 0);}</string>
     <property name="text">
      <string/>
     </property>
+    <property name="placeholderText">
+     <string>Пороль</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="to_edit">
     <property name="geometry">
@@ -197,6 +212,9 @@ QPushButton:pressed{background-color:rgb(255, 85, 0);}</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 170, 255);border: 2px solid black;</string>
+    </property>
+    <property name="placeholderText">
+     <string>Почта на которую отправлять</string>
     </property>
    </widget>
    <widget class="QLabel" name="user_dt_lbl">
@@ -266,6 +284,9 @@ QPushButton:pressed{background-color:rgb(255, 85, 0);}</string>
     <property name="text">
      <string/>
     </property>
+    <property name="placeholderText">
+     <string>Логин(почта)</string>
+    </property>
    </widget>
    <widget class="QTextEdit" name="msg_txt_edit">
     <property name="geometry">
@@ -290,6 +311,9 @@ QPushButton:pressed{background-color:rgb(255, 85, 0);}</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color:rgb(85, 255, 127);border: 2px solid black;</string>
+    </property>
+    <property name="placeholderText">
+     <string>Сообщение,Писать на английском</string>
     </property>
    </widget>
    <widget class="QScrollArea" name="area_us_dt">
@@ -319,7 +343,7 @@ QPushButton:pressed{background-color:rgb(255, 85, 0);}</string>
     <property name="widgetResizable">
      <bool>true</bool>
     </property>
-    <widget class="QWidget" name="scrollAreaWidgetContents">
+    <widget class="QWidget" name="area_us">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -328,31 +352,21 @@ QPushButton:pressed{background-color:rgb(255, 85, 0);}</string>
        <height>146</height>
       </rect>
      </property>
-     <widget class="QLabel" name="label_2">
+     <widget class="QTableWidget" name="dt_us_area_table">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>10</y>
-        <width>47</width>
-        <height>31</height>
+        <y>0</y>
+        <width>371</width>
+        <height>151</height>
        </rect>
       </property>
-      <property name="text">
-       <string>TextLabel</string>
+      <property name="columnCount">
+       <number>3</number>
       </property>
-     </widget>
-     <widget class="QRadioButton" name="radioButton">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>10</y>
-        <width>291</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>RadioButton</string>
-      </property>
+      <column/>
+      <column/>
+      <column/>
      </widget>
     </widget>
    </widget>
@@ -383,7 +397,7 @@ QPushButton:pressed{background-color:rgb(255, 85, 0);}</string>
     <property name="widgetResizable">
      <bool>true</bool>
     </property>
-    <widget class="QWidget" name="scrollAreaWidgetContents_2">
+    <widget class="QWidget" name="area_to_2">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -392,6 +406,21 @@ QPushButton:pressed{background-color:rgb(255, 85, 0);}</string>
        <height>166</height>
       </rect>
      </property>
+     <widget class="QTableWidget" name="to_area">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>341</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="columnCount">
+       <number>2</number>
+      </property>
+      <column/>
+      <column/>
+     </widget>
     </widget>
    </widget>
    <widget class="QPushButton" name="add_to_but">
@@ -431,8 +460,8 @@ QPushButton:pressed{background-color:rgb(170, 0, 127);}</string>
    <widget class="QPushButton" name="add_us_dt_but">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>70</y>
+      <x>410</x>
+      <y>60</y>
       <width>80</width>
       <height>30</height>
      </rect>
@@ -462,18 +491,194 @@ QPushButton:pressed{background-color:rgb(255, 0, 127);}</string>
      <string>Добавить</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QGroupBox" name="alldtbox">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>460</y>
-      <width>211</width>
-      <height>31</height>
+      <x>10</x>
+      <y>300</y>
+      <width>391</width>
+      <height>181</height>
      </rect>
     </property>
-    <property name="text">
-     <string>состояние</string>
+    <property name="title">
+     <string>Данные</string>
     </property>
+    <widget class="QLabel" name="vlm_msgs_lbl">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>131</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Количество сообщений:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="msg_txt_lbl">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Сообщение:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="us_lbl">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>261</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Почта(ы) с которой(ых) отпрлявлять сообщение:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="to_lbl">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>181</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Почта на которую отправлять:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="res_stat_lbl">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Общее состояние:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="vlm_status">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>10</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>30</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="dt_us_status">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>60</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>30</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="to_status">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>84</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>30</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="msg_status">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>40</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>30</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="res_status">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>110</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>30</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>140</y>
+       <width>311</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Для начало отвправки должны быть все плюсы , если нет то
+ программа зависнет</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
