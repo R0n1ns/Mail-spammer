@@ -1,6 +1,5 @@
 #импорты
 import smtplib
-from imp_acc import acc
 
 class sender:
     """Отправщик сообщения\n
@@ -65,5 +64,5 @@ class sender:
 # msg="test"
 # volum=2
 # t= ['korobovvad@mail.ru','korobovvad27@yandex.ru']
-# snd = sender(acc,t,msg)
+# snd = sender(ac=[["korobovvad@mail.ru","YkRcAHBJ9HewGYThxdCN"]],to=["korobovvad@mail.ru"],msg="аыпывпывп")
 # snd.send_1_msg_frm_1_acc_to_mtpl_acs()
