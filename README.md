@@ -1,3 +1,4 @@
+╳ The project is closed for lack of sense in its continuation ╳
 Eng:
 Mail Dispatcher
 The program and scripts for sending or mailing emails are designed for training purposes .
